@@ -11,3 +11,10 @@
 7. [V8内存管理基础](./docs/the%20value%20type%20in%20V8.md)
 8. [V8内存管理机制](./docs/the%20mechanism%20of%20memory%20management%20in%20V8.md)
 9. [使用Chrome来调试内存](./docs/how%20to%20debug%20memory%20with%20Chrome%20Devtools.md)
+
+## 版权许可
+本书采用“保持署名—非商用”创意共享4.0许可证。
+
+只要保持原作者署名和非商用，您可以自由地阅读、分享、修改本书。
+
+详细的法律条文请参见创意共享网站。
