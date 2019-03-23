@@ -24,3 +24,10 @@
 只要保持原作者署名和非商用，您可以自由地阅读、分享、修改本书。
 
 详细的法律条文请参见创意共享网站。
+
+## 关于作者
+
+大家好，我是董天成，是一名活跃在一线开发的前端工程师，目前就职于百度。
+
+github: https://github.com/andycall
+zhihu: https://www.zhihu.com/people/dong-tian-cheng/activities
