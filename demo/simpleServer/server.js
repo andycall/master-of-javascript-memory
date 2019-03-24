@@ -1,13 +1,26 @@
 const http = require('http');
 const uuid = require('uuid');
 
-let cache = {};
+function readDataFromDataBase() {
+    let cache = {};
+    return function(key) {
+        if (cache[key]) {
+            return cache[key];
+        }
+
+        let data = new Array(10000).fill('xxxx');
+        cache[key] = data;
+        return data;
+    };
+}
+
+const cachedDataBase = readDataFromDataBase();
 
 const server = http.createServer((req, res) => {
-    cache[uuid()] = new Array(10000).fill('xxxx');
+    let key = uuid();
+    let data = cachedDataBase(key);
     res.end(JSON.stringify({
-        errno: 0,
-        errmsg: 'ok'
+        data: data
     }));
 });
 

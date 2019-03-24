@@ -16,7 +16,7 @@
 6. [避免内存泄露的技巧](./docs/how%20to%20prevent%20leaks.md)
 7. [V8内存管理基础](./docs/the%20value%20type%20in%20V8.md)
 8. [V8内存管理机制](./docs/the%20mechanism%20of%20memory%20management%20in%20V8.md)
-9. [使用Chrome来调试内存](./docs/how%20to%20debug%20memory%20with%20Chrome%20Devtools.md)
+9. [使用Chrome DevTools 来调试内存](./docs/how%20to%20debug%20memory%20with%20Chrome%20Devtools.md)
 
 ## 版权许可
 本书采用“保持署名—非商用”创意共享4.0许可证。
