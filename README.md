@@ -27,7 +27,8 @@
 
 ## 关于作者
 
-大家好，我是董天成，是一名活跃在一线开发的前端工程师，目前就职于百度。
+我是董天成，是一名活跃在一线开发的前端工程师，目前就职于百度。除了写本书之外，我还在专注一款新式前端应用框架的研发——[RCRE](https://github.com/andycall/RCRE)。
 
 github: https://github.com/andycall
+
 zhihu: https://www.zhihu.com/people/dong-tian-cheng/activities
