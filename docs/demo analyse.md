@@ -55,9 +55,11 @@ function readDataFromDataBase() {
     };
 }
 
+const database = readDataFromDataBase();
+
 const server = http.createServer((req, res) => {
     let key = uuid();
-    let data = readDataFromDataBase()(key);
+    let data = database(key);
     res.end(JSON.stringify({
         data: data
     }));
