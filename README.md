@@ -10,7 +10,7 @@
  
 1. [前言](./docs/getting%20started.md)
 2. [实例分析：一个内存泄露的demo](./docs/demo%20analyse.md)
-3. [什么样的场景才是内存泄露](./docs/typical%20scene%20of%20leaks.md)
+3. [如何发现内存泄露](./docs/how%20to%20find%20memory%20leaks.md)
 4. [如何定位内存泄露](./docs/how%20to%20identify%20leaks.md)
 5. [如何从代码中找出引用关系](./docs/find%20references%20from%20code.md)
 6. [避免内存泄露的技巧](./docs/how%20to%20prevent%20leaks.md)

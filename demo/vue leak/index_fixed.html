@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Leak Demo</title>
+    <style>
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>修复之后，Vue实例可以被回收</h1>
+    <p>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+    </p>
+    <router-view></router-view>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.js"></script>
+<script>
+    const Foo = {
+        template: `
+        <div>
+            <p>the window width: {{width}}px</p>
+            <p>the window height: {{height}}px</p>
+        </div>`,
+        data: function() {
+            return {
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+        },
+        mounted() {
+            this.resizeFunc = () => {
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+            };
+            window.addEventListener('resize', this.resizeFunc);
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.resizeFunc);
+            this.resizeFunc = null;
+        }
+    };
+
+    const Bar = { template: '<div>bar</div>' };
+    const routes = [
+        { path: '/foo', component: Foo },
+        { path: '/bar', component: Bar }
+    ];
+
+    const router = new VueRouter({
+        routes // short for `routes: routes`
+    });
+
+    const app = new Vue({
+        router
+    }).$mount('#app')
+</script>
+</html>
