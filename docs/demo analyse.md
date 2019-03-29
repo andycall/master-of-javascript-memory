@@ -73,7 +73,7 @@ console.log('Server listening to port 3000. Press Ctrl+C to stop it.');
 
 公司的运营活动获得了很大的成功，用户量一下子就增长了10倍。这时，小A突然接到用户反馈，说运营页面打不开了，小A紧忙登录到线上看报错日志，就发现node进程在打印出下图的错误之后就直接跪了。
 
-![Crash](./images/Crash.png)
+![Crash](./images/chapter1/Crash.png)
 
 老板很生气，让小A总结这次事故的原因，并后续给团队开展一次Case Study。
 
@@ -91,11 +91,11 @@ node --inspect server.js
 
 紧接着，大佬打开了Chrome浏览器，在地址栏内输入: `chrome://inspect`，发现刚才运行的server程序就在页面上列出来了。
 
-![inspect](./images/chrome%20inspect.png)
+![inspect](./images/chapter1/chrome%20inspect.png)
 
 紧接着，大佬点击了下面的`inspect`按钮，一个Chrome Devtools就弹出来了。大佬选取了顶部Memory的tab，并在`Select profilling type`下面选择了`Allocation sampling`。点击下面的蓝色的`Start`按钮，然后录制就开始了。
 
-![devtools](./images/devtools.png)
+![devtools](./images/chapter1/devtools.png)
 
 大佬对小A说，现在内存录制搞好了，接下来就是构造一些请求来访问服务器了。
 
@@ -111,21 +111,21 @@ node --inspect server.js
 
 大佬执行执行这个命令之后，立刻切换到devtools，发现`JavaScript VM Instance`显示的数字突增，不一会儿，就从不到10MB膨胀到了700MB。这时，大佬露出了满意的微笑，说到："看，问题复现了"，随后点击了页面上的`Stop`按钮，停止了内存的录制，并且退出了刚才执行的ab进程。
 
-![badend](./images/badend.png)
+![badend](./images/chapter1/badend.png)
 
 ### 内存分析
 
 这时，点击了Stop按钮之后，devtools显示出了下图的界面。
 
-![memory status](./images/memory%20status.png)
+![memory status](./images/chapter1/memory%20status.png)
 
 大佬对小A解释说，看，这个工具把每一行代码所占用的内存给你显示出来了，注意到第一行没有，那段代码占用了99.81%的内存！
 
-![toCode](./images/toCode.png)
+![toCode](./images/chapter1/toCode.png)
 
 大佬点击了最右边的`server.js`，devtools就自动跳转到代码界面了。devtools使用黄色的标识显示了占用内存最大的代码位置——就是小A写的那段缓存代码！
 
-![code](./images/code.png)
+![code](./images/chapter1/code.png)
 
 ### 问题修复
 
